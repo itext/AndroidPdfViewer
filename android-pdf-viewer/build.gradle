@@ -25,11 +25,11 @@ ext {
 }
 
 android {
-    compileSdkVersion 28
+    compileSdk 32
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 28
+        targetSdk 32
         versionCode 1
         versionName "3.2.0-beta.1"
     }
