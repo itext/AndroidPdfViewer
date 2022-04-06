@@ -125,6 +125,10 @@ public class PDFView extends RelativeLayout {
 
     PdfFile pdfFile;
 
+    public PdfFile getPdfFile() {
+        return pdfFile;
+    }
+
     /** The index of the current sequence */
     private int currentPage;
 
