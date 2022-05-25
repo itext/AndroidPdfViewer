@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 ext {
     bintrayRepo = 'maven'
@@ -25,7 +26,7 @@ ext {
 }
 
 android {
-    compileSdk 32
+    compileSdkVersion 32
 
     defaultConfig {
         minSdkVersion 14
@@ -36,7 +37,26 @@ android {
 
 }
 
+repositories {
+    maven {
+        url "https://repo.itextsupport.com/android"
+    }
+}
 dependencies {
-    api project(path: ':pdfium-android')
     implementation 'androidx.core:core:1.7.0'
+    implementation 'com.itextpdf.android.pdfium:pdfium-android:1.9.0'
+}
+
+project.afterEvaluate {
+    publishing {
+        publications {
+            library(MavenPublication) {
+                groupId = 'com.itextpdf.android.pdfviewer'
+                artifactId = 'android-pdf-viewer'
+                version = android.defaultConfig.versionName
+
+                artifact bundleReleaseAar
+            }
+        }
+    }
 }
