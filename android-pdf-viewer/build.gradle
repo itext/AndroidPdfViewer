@@ -38,6 +38,7 @@ android {
 }
 
 repositories {
+    mavenLocal()
     maven {
         url "https://repo.itextsupport.com/android"
     }
