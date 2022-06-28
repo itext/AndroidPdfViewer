@@ -13,11 +13,11 @@ repositories {
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 32
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 28
+        minSdkVersion 27
+        targetSdkVersion 32
         versionCode 3
         versionName "3.0.0"
     }
